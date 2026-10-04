@@ -20,11 +20,13 @@
 | **Controller** | Arduino Uno R3 |
 | **Shield** | CNC Shield V3 |
 | **Drivers** | A4988 Stepper Drivers (1/16 microstepping) |
+|**Motors** | Nema 17 45Ncm stepper motor|
 | **Power Supply** | 19V 3A DC Adapter |
 | **Pen Lift** | SG90 / MG90S Micro Servo Motor |
 | **Drive System** | GT2 Belts & 20-Tooth Pulleys |
 | **Structure** | Custom 3D Printed Rod Guides + Smooth Steel Rods |
 | **Power Filter**| 1000uF Electrolytic Capacitor |
+|**Others**| Cooling fan, holding parts(screw, zip tie) |
 
 ---
 
