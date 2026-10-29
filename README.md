@@ -44,6 +44,9 @@ The Inkpulse uses several software to operate. Firstly comes the Gcode part. The
 
 🎬 **Watch Video Demo:** [Click here to view the plotter in action](WhatsApp%20Video%202026-10-04%20at%2010.53.54%20PM_squished.mp4)
 
+## Repository Structure
+* `/3D objects` All the 3d printable .3mf file
+
+
 ---
 
-## ⚙️️ Custom GRBL Settings
