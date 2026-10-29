@@ -1,19 +1,24 @@
-# 🖊️ InkPulse — High-Speed Ultra-Low-Cost CNC XY Plotter
+# InkPulse: High-Speed CNC XY Plotter
 
-**InkPulse** is a custom-built, ultra-low-cost, high-speed automated XY-plotter designed to draw vector artwork and render handwritten text with extreme accuracy. Built from scratch without expensive linear bearings, this project pushes the limits of DIY hardware optimization through low-cost 3D printing and custom firmware hacking.
+**InkPulse** is a custom-built, low-cost, high-speed automated XY-plotter designed to draw vector artwork and render handwritten text with good accuracy. Built from scratch without expensive linear bearings, this project pushes the limits of DIY hardware optimization through low-cost 3D printing and custom firmware.
+---
+
+## Key Features
+
+* **Low Cost Engineering:** Replaced expensive LM8UU linear bearings with custom 3D-printed friction-based rod guides, lowering construction costs significantly compared to typical DIY plotters.
+* **Firmware Register-Level Pin Remapping:** Custom GRBL-Servo 0.9i firmware running at 115200 Baud Rate, remapped directly at `cpu_map_atmega328p.h` level. Y-axis pins (Step: 4, Dir: 7) were swapped with Z-axis pins (Step: 3, Dir: 6) to drive the pen lift via standard Z-slot G-code commands (`M3`/`M5`).
+* **High Speed & Acceleration:** Powered by a 19V 3A DC power supply and GT2 belt-drive system, tuned to achieve up to 8000 mm/min maximum feed rate and **500 mm/sec²** acceleration.
+
+## Working Principle
+There are 2 stepper motors that controls respectively X and Y axis. So the pen can go to anywhere in the grid. The servo  motor controls the z axis mechanism or pen lifting mechanism. The whole thing's brain is Arduino Uno. The CNC shield v3 sits on the top of Arduino. and 2 A4988 Stepper Drivers sit on the CNC shield completing the control unit. The servo is connected by 3 wires that is connected by a custom made bridge so that the wire can go wherever the pen moves.
+
+## Softwares
+The Inkpulse uses several software to operate. Firstly comes the Gcode part. The Gcode is written by Inkscape software. Inkscape creates a trace bitmap and it converts it into gcode. Then LaserGRBL sends those Gcode to the Inkpulse and it can write or draw smoothly.
+
 
 ---
 
-## 🌟 Key Features & Engineering Highlights
-
-* **Ultra-Low Cost Engineering:** Replaced expensive LM8UU linear bearings with custom 3D-printed friction-based rod guides, lowering construction costs significantly compared to typical DIY plotters.
-* **Firmware Register-Level Pin Remapping:** Custom **GRBL-Servo 0.9i** firmware running at **115200 Baud Rate**, remapped directly at `cpu_map_atmega328p.h` level. Y-axis pins (Step: 4, Dir: 7) were swapped with Z-axis pins (Step: 3, Dir: 6) to drive the pen lift via standard Z-slot G-code commands (`M3`/`M5`).
-* **High-Speed Acceleration:** Powered by a 19V 3A DC power supply and GT2 belt-drive system, tuned to achieve up to **10,000 mm/min** maximum feed rate and **500 mm/sec²** acceleration.
-* **Electrical Noise Mitigation:** Integrated a 50V 1000µF decoupling capacitor in parallel across the SG90/MG90S servo line to eliminate voltage spikes and prevent Arduino serial disconnects.
-
----
-
-## 🛠️ Hardware & Components List
+## Hardware & Components List
 
 | Component | Description |
 | :--- | :--- |
